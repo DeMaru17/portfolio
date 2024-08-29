@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title','Education')
+@section('title','Certification')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        <h4>Education Data</h4>
-        <a class="btn btn-primary float-right" href="{{route('education.create')}}" id="add-data-btn">Add Data</a>
+        <h4>Certification Data</h4>
+        <a class="btn btn-primary float-right" href="{{route('certification.create')}}" id="add-data-btn">Add Data</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -13,9 +13,9 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Sekolah</th>
-                    <th>Jurusan</th>
-                    <th>Tahun Lulus</th>
+                    <th>Nama Sertifikat</th>
+                    <th>Penyelenggara</th>
+                    <th>Tanggal Sertifikat</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -23,15 +23,15 @@
                 @php
                     $no = 1;
                 @endphp
-                @foreach($education as $edu)
+                @foreach($cert as $c)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{ $edu->nama_sekolah }}</td>
-                    <td>{{  $edu->jurusan }}</td>
-                    <td>{{  $edu->tahun_lulus }}</td>
+                    <td>{{ $c->nama_sertifikat }}</td>
+                    <td>{{  $c->penyelenggara }}</td>
+                    <td>{{  $c->tanggal_sertifikat }}</td>
                     <td>
-                        <a href="{{route('education.edit', $edu->id)}}" class="btn btn-primary">Edit</a>
-                        <form class="d-inline" action="{{route('education.destroy', $edu->id)}}" method="post">
+                        <a href="{{route('certification.edit', $c->id)}}" class="btn btn-primary">Edit</a>
+                        <form class="d-inline" action="{{route('certification.destroy', $c->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this profile?')">Delete</button>

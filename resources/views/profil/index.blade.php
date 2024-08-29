@@ -8,7 +8,8 @@
         <a class="btn btn-primary float-right" href="{{route('profil.create')}}" id="add-data-btn">Add Data</a>
     </div>
     <div class="card-body">
-        <table class="table table-striped">
+        <div class="table-responsive">
+            <table class="table table-striped">
             <thead>
                 <tr>
                     <th>No</th>
@@ -44,6 +45,7 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 

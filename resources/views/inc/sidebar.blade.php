@@ -34,13 +34,13 @@
                             <a href="{{route('education.index')}}">Education</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="component-breadcrumb.html">Breadcrumb</a>
+                            <a href="{{route('experience.index')}}">Experience</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="component-button.html">Button</a>
+                            <a href="{{route('skill.index')}}">Skill</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="component-card.html">Card</a>
+                            <a href="{{route('certification.index')}}">Certification</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="component-carousel.html">Carousel</a>

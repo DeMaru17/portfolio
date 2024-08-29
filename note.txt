@@ -21,18 +21,16 @@ tahun lulus
 
 
 db pengalaman
-id_profil
 nama_perusahaan
 posisi
 lama_kerja
 deskripsi
 
 db_keahlian
-id_profil
 nama_skill
+persentase_keahlian
 
 db sertifikasi
-id_profil
 nama_sertifikat
 penyelenggara
 tanggal_sertifikat

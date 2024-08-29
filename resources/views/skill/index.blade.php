@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title','Education')
+@section('title','Skill')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        <h4>Education Data</h4>
-        <a class="btn btn-primary float-right" href="{{route('education.create')}}" id="add-data-btn">Add Data</a>
+        <h4>Skill Data</h4>
+        <a class="btn btn-primary float-right" href="{{route('skill.create')}}" id="add-data-btn">Add Data</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -13,9 +13,8 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Sekolah</th>
-                    <th>Jurusan</th>
-                    <th>Tahun Lulus</th>
+                    <th>Nama Skill</th>
+                    <th>persentase</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -23,15 +22,14 @@
                 @php
                     $no = 1;
                 @endphp
-                @foreach($education as $edu)
+                @foreach($skill as $sk)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{ $edu->nama_sekolah }}</td>
-                    <td>{{  $edu->jurusan }}</td>
-                    <td>{{  $edu->tahun_lulus }}</td>
+                    <td>{{ $sk->nama_skill }}</td>
+                    <td>{{  $sk->persentase }}</td>
                     <td>
-                        <a href="{{route('education.edit', $edu->id)}}" class="btn btn-primary">Edit</a>
-                        <form class="d-inline" action="{{route('education.destroy', $edu->id)}}" method="post">
+                        <a href="{{route('skill.edit', $sk->id)}}" class="btn btn-primary">Edit</a>
+                        <form class="d-inline" action="{{route('skill.destroy', $sk->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this profile?')">Delete</button>

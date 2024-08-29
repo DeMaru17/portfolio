@@ -14,3 +14,6 @@ Route::post('action-login', [\App\Http\Controllers\LoginController::class, 'acti
 Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index']);
 Route::resource('profil', \App\Http\Controllers\ProfilController::class);
 Route::resource('education', \App\Http\Controllers\EducationController::class);
+Route::resource('experience', \App\Http\Controllers\ExperienceController::class);
+Route::resource('skill', \App\Http\Controllers\SkillController::class);
+Route::resource('certification', \App\Http\Controllers\CertificationController::class);
