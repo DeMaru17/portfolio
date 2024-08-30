@@ -19,7 +19,7 @@
             </div>
             <div class="mb-3">
                 <label for="lama_kerja">Lama Kerja</label>
-                <input type="text" name="lama_kerja" id="lama_kerja" class="form-control">
+                <input type="text" name="lama_kerja" id="lama_kerja" class="form-control" placeholder="Contoh: 1 Januari 2020 - 31 Desember 2023">
             </div>
             <div class="mb-3">
                 <label for="deskripsi">deskripsi</label>

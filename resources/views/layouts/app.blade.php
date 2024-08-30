@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('adm/dist/assets/css/bootstrap.css')}}">
 
     <link rel="stylesheet" href="{{asset('adm/dist/assets/vendors/iconly/bold.css')}}">
+    <link rel="stylesheet" href="{{asset('adm/dist/assets/vendors/sweetalert2/sweetalert2.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('adm/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('adm/dist/assets/vendors/bootstrap-icons/bootstrap-icons.css')}}">
@@ -45,6 +46,9 @@
 
     <script src="{{asset('adm/dist/assets/vendors/apexcharts/apexcharts.js')}}"></script>
     <script src="{{asset('adm/dist/assets/js/pages/dashboard.js')}}"></script>
+
+    <script src="{{asset('adm/dist/assets/js/extensions/sweetalert2.js')}}"></script>
+    <script src="{{asset('adm/dist/assets/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
 
     <script src="{{asset('adm/dist/assets/js/main.js')}}"></script>
 </body>

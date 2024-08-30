@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="index.html"><img src="{{asset('adm/dist/assets/images/logo/logo.png')}}" alt="Logo" srcset=""></a>
+                    <a href="{{url('dashboard')}}"><img src="{{asset('adm/dist/assets/images/logo/logo.png')}}" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -15,7 +15,7 @@
                 <li class="sidebar-title">Menu</li>
 
                 <li class="sidebar-item active ">
-                    <a href="index.html" class='sidebar-link'>
+                    <a href="{{url('dashboard')}}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
@@ -41,33 +41,6 @@
                         </li>
                         <li class="submenu-item ">
                             <a href="{{route('certification.index')}}">Certification</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-carousel.html">Carousel</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-dropdown.html">Dropdown</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-list-group.html">List Group</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-modal.html">Modal</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-navs.html">Navs</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-pagination.html">Pagination</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-progress.html">Progress</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-spinner.html">Spinner</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-tooltip.html">Tooltip</a>
                         </li>
                     </ul>
                 </li>
