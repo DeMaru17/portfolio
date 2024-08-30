@@ -21,6 +21,8 @@
 
 <body>
     <div id="app">
+        @include('sweetalert::alert')
+
 
         @include('inc.sidebar')
 
@@ -51,6 +53,7 @@
     <script src="{{asset('adm/dist/assets/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
 
     <script src="{{asset('adm/dist/assets/js/main.js')}}"></script>
+    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 </body>
 
 </html>

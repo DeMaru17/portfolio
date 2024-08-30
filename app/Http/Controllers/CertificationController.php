@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Certification;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class CertificationController extends Controller
 {
@@ -13,6 +15,10 @@ class CertificationController extends Controller
     public function index()
     {
         $cert = Certification::orderBy('id', 'desc')->get();
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('certification.index', compact('cert'));
     }
 
@@ -34,6 +40,7 @@ class CertificationController extends Controller
             'penyelenggara' => $request->penyelenggara,
             'tanggal_sertifikat' => $request->tanggal_sertifikat,
         ]);
+        Alert::success('Success', 'Data Berhasil Ditambahkan');
         return redirect()->route('certification.index')->with('success', 'Data Berhasil Ditambah');
     }
 
@@ -54,7 +61,7 @@ class CertificationController extends Controller
         return view('certification.edit', compact('cert'));
     }
 
-    /** 
+    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
@@ -72,7 +79,8 @@ class CertificationController extends Controller
      */
     public function destroy(string $id)
     {
-        Certification::where('id', $id)->delete();
+
+        Certification::findOrfail($id)->delete();
         return redirect()->route('certification.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

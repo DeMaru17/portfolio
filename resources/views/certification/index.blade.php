@@ -31,11 +31,12 @@
                     <td>{{  $c->tanggal_sertifikat }}</td>
                     <td>
                         <a href="{{route('certification.edit', $c->id)}}" class="btn btn-primary">Edit</a>
-                        <form class="d-inline" action="{{route('certification.destroy', $c->id)}}" method="post">
+                        <a href="{{ route('certification.destroy', $c->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                        {{-- <form class="d-inline" action="{{route('certification.destroy', $c->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this profile?')">Delete</button>
-                        </form>
+                            <button type="submit" class="btn btn-danger" data-confirm-delete="true" >Delete</button>
+                        </form> --}}
                     </td>
                 </tr>
                 @endforeach
