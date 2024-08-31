@@ -17,3 +17,7 @@ Route::resource('education', \App\Http\Controllers\EducationController::class);
 Route::resource('experience', \App\Http\Controllers\ExperienceController::class);
 Route::resource('skill', \App\Http\Controllers\SkillController::class);
 Route::resource('certification', \App\Http\Controllers\CertificationController::class);
+
+// Route::get('/portfolio', [\App\Http\Controllers\PortfolioController::class, 'footer'])->name('portolio.footer');
+Route::get('/portfolio', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('portolio.index');
+Route::get('/portfolio/about', [\App\Http\Controllers\PortfolioController::class, 'about'])->name('portolio.about');

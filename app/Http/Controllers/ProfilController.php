@@ -36,19 +36,19 @@ class ProfilController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'nama_lengkap' => 'required|string|max:55',
-            'email' => 'required|string|email|max:55',
-            'no_tel' => 'required|string|max:15',
-            'alamat' => 'required|string|max:250',
-            'tentang_saya' => 'nullable|string',
-            'facebook' => 'nullable|url',
-            'x' => 'nullable|url',
-            'linkedin' => 'nullable|url',
-            'instagram' => 'nullable|url',
+        // $request->validate([
+        //     'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        //     'nama_lengkap' => 'required|string|max:55',
+        //     'email' => 'required|string|email|max:55',
+        //     'no_tel' => 'required|string|max:15',
+        //     'alamat' => 'required|string|max:250',
+        //     'tentang_saya' => 'nullable|string',
+        //     'facebook' => 'nullable|url',
+        //     'x' => 'nullable|url',
+        //     'linkedin' => 'nullable|url',
+        //     'instagram' => 'nullable|url',
 
-        ]);
+        // ]);
 
         //Menghanddle file upload-an:
         if ($request->hasFile('gambar')) {
@@ -95,19 +95,19 @@ class ProfilController extends Controller
     public function update(Request $request, string $id)
     {
         $profile = Profile::findOrFail($id);
-        $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'nama_lengkap' => 'required|string|max:55',
-            'email' => 'required|string|email|max:55',
-            'no_tel' => 'required|string|max:15',
-            'alamat' => 'required|string|max:250',
-            'tentang_saya' => 'nullable|string',
-            'facebook' => 'nullable|url',
-            'x' => 'nullable|url',
-            'linkedin' => 'nullable|url',
-            'instagram' => 'nullable|url',
+        // $request->validate([
+        //     'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        //     'nama_lengkap' => 'required|string|max:55',
+        //     'email' => 'required|string|email|max:55',
+        //     'no_tel' => 'required|string|max:15',
+        //     'alamat' => 'required|string|max:250',
+        //     'tentang_saya' => 'nullable|string',
+        //     'facebook' => 'nullable|url',
+        //     'x' => 'nullable|url',
+        //     'linkedin' => 'nullable|url',
+        //     'instagram' => 'nullable|url',
 
-        ]);
+        // ]);
         // Simpan gambar jika ada di upload
         if ($request->hasFile('gambar')) {
             // Hapus gambar lama jika ada:

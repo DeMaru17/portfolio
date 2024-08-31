@@ -1,4 +1,9 @@
+db_user
+email
+password
+
 db profil
+id_user
 nama_Lengkap
 email
 alamat
@@ -13,7 +18,7 @@ linkedin
 
 
 db pendidikan
-id_profil
+id_user
 nama_sekolah
 jurusan
 tahun lulus
@@ -21,16 +26,19 @@ tahun lulus
 
 
 db pengalaman
+id_user
 nama_perusahaan
 posisi
 lama_kerja
 deskripsi
 
 db_keahlian
+id_user
 nama_skill
 persentase_keahlian
 
 db sertifikasi
+id_user
 nama_sertifikat
 penyelenggara
 tanggal_sertifikat
