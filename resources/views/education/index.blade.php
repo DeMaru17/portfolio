@@ -31,11 +31,12 @@
                     <td>{{  $edu->tahun_lulus }}</td>
                     <td>
                         <a href="{{route('education.edit', $edu->id)}}" class="btn btn-primary">Edit</a>
-                        <form class="d-inline" action="{{route('education.destroy', $edu->id)}}" method="post">
+                        <a href="{{ route('education.destroy', $edu->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                        {{-- <form class="d-inline" action="{{route('education.destroy', $edu->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this profile?')">Delete</button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
                 @endforeach

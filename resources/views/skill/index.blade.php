@@ -29,11 +29,12 @@
                     <td>{{  $sk->persentase }}</td>
                     <td>
                         <a href="{{route('skill.edit', $sk->id)}}" class="btn btn-primary">Edit</a>
-                        <form class="d-inline" action="{{route('skill.destroy', $sk->id)}}" method="post">
+                        <a href="{{ route('skill.destroy', $sk->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                        {{-- <form class="d-inline" action="{{route('skill.destroy', $sk->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this profile?')">Delete</button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
                 @endforeach

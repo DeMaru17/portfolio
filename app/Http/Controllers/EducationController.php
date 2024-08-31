@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Education;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EducationController extends Controller
 {
@@ -13,6 +14,10 @@ class EducationController extends Controller
     public function index()
     {
         $education = Education::OrderBy('id', 'desc')->get();
+
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
         return view('education.index', compact('education'));
     }
 
@@ -35,6 +40,7 @@ class EducationController extends Controller
             'tahun_lulus' => 'required|string',
         ]]);
         Education::create($request->all());
+        Alert::success('Success', 'Data Berhasil Ditambahkan');
         return redirect()->route('education.index')->with('success', 'Data berhasil ditambahkan');
     }
 
@@ -65,6 +71,7 @@ class EducationController extends Controller
             'jurusan' => $request->jurusan,
             'tahun_lulus' => $request->tahun_lulus,
         ]);
+        Alert::success('Success', 'Data Berhasil Diedit');
         return redirect()->route('education.index')->with('success', 'Data berhasil diupdate');
     }
 
@@ -74,6 +81,7 @@ class EducationController extends Controller
     public function destroy(string $id)
     {
         Education::where('id', $id)->delete();
+        Alert::toast('Data telah dihapus', 'Toast Type');
         return redirect()->to('education')->with('message', 'Data berhasil dihapus');
     }
 }

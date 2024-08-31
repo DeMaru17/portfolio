@@ -11,11 +11,11 @@
             @csrf
             <div class="mb-3">
                 <label for="nama_skill">Nama Skill</label>
-                <input type="text" name="nama_skill" id="nama_skill" class="form-control">
+                <input type="text" name="nama_skill" id="nama_skill" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="persentase">persentase</label>
-                <input type="number" name="persentase" id="persentase" class="form-control">
+                <input type="number" name="persentase" id="persentase" class="form-control" required>
             </div>
 
 

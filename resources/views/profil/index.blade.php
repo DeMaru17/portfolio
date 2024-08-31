@@ -35,11 +35,12 @@
                     <td><img width="300" height="300" src="{{asset('storage/image/'. $profile->gambar)}}" alt=""></td>
                     <td>
                         <a href="{{route('profil.edit', $profile->id)}}" class="btn btn-primary">Edit</a>
-                        <form class="d-inline" action="{{route('profil.destroy', $profile->id)}}" method="post">
+                        <a href="{{ route('profil.destroy', $profile->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                        {{-- <form class="d-inline" action="{{route('profil.destroy', $profile->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this profile?')">Delete</button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
                 @endforeach

@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certification;
+use App\Models\Education;
+use App\Models\Experience;
+use App\Models\Profile;
+use App\Models\skill;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +16,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $profile = Profile::first();
+        $education = Education::all();
+        $experience = Experience::all();
+        $skill = skill::all();
+        $certification = Certification::all();
+        // dd($profile, $education, $experience, $skill, $certification);
+        return view('dashboard.index', compact('profile', 'education', 'experience', 'skill', 'certification'));
     }
 
     /**

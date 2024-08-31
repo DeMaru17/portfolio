@@ -11,15 +11,15 @@
             @csrf
             <div class="mb-3">
                 <label for="nama_sertifikat">Nama Sertifikat</label>
-                <input type="text" name="nama_sertifikat" id="nama_sertifikat" class="form-control">
+                <input type="text" name="nama_sertifikat" id="nama_sertifikat" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="penyelenggara">Penyelenggara</label>
-                <input type="text" name="penyelenggara" id="penyelenggara" class="form-control">
+                <input type="text" name="penyelenggara" id="penyelenggara" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="tanggal_sertifikat">Tanggal Sertifikat</label>
-                <input type="text" name="tanggal_sertifikat" id="tanggal_sertifikat" class="form-control">
+                <input type="text" name="tanggal_sertifikat" id="tanggal_sertifikat" class="form-control" required>
             </div>
 
             <div class="mb-3">

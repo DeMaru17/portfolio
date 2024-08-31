@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Experience;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ExperienceController extends Controller
 {
@@ -13,6 +14,11 @@ class ExperienceController extends Controller
     public function index()
     {
         $experience = Experience::orderBy('id', 'desc')->get();
+
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('experience.index', compact('experience'));
     }
 
@@ -35,6 +41,7 @@ class ExperienceController extends Controller
             'lama_kerja' => $request->lama_kerja,
             'deskripsi' => $request->deskripsi,
         ]);
+        Alert::success('Success', 'Data Berhasil Ditambahkan');
         return redirect()->route('experience.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
@@ -66,6 +73,7 @@ class ExperienceController extends Controller
             'lama_kerja' => $request->lama_kerja,
             'deskripsi' => $request->deskripsi,
         ]);
+        Alert::success('Success', 'Data Berhasil Diedit');
         return redirect()->route('experience.index')->with('success', 'Data Berhasil Diubah');
     }
 
@@ -75,6 +83,7 @@ class ExperienceController extends Controller
     public function destroy(string $id)
     {
         Experience::where('id', $id)->delete();
+        Alert::toast('Data telah dihapus', 'Toast Type');
         return redirect()->to('experience')->with('message', 'Data berhasil dihapus');
     }
 }

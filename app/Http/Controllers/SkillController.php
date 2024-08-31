@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\skill;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SkillController extends Controller
 {
@@ -13,6 +14,11 @@ class SkillController extends Controller
     public function index()
     {
         $skill = skill::orderBy('id', 'desc')->get();
+
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('skill.index', compact('skill'));
     }
 
@@ -33,6 +39,7 @@ class SkillController extends Controller
             'nama_skill' => $request->nama_skill,
             'persentase' => $request->persentase,
         ]);
+        Alert::success('Success', 'Data Berhasil Ditambahkan');
         return redirect()->route('skill.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
@@ -62,6 +69,7 @@ class SkillController extends Controller
             'nama_skill' => $request->nama_skill,
             'persentase' => $request->persentase,
         ]);
+        Alert::success('Success', 'Data Berhasil Diedit');
         return redirect()->route('skill.index')->with('success', 'Data Berhasil Diupdate');
     }
 
@@ -71,6 +79,7 @@ class SkillController extends Controller
     public function destroy(string $id)
     {
         skill::where('id', $id)->delete();
+        Alert::toast('Data telah dihapus', 'Toast Type');
         return redirect()->route('skill.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

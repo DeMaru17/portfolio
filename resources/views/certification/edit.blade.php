@@ -12,15 +12,15 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="nama_sertifikat">Nama Sertifikat</label>
-                <input type="text" name="nama_sertifikat" id="nama_sertifikat" class="form-control" value="{{$cert->nama_sertifikat}}">
+                <input type="text" name="nama_sertifikat" id="nama_sertifikat" class="form-control" value="{{$cert->nama_sertifikat}}" required>
             </div>
             <div class="mb-3">
                 <label for="penyelenggara">Penyelenggara</label>
-                <input type="text" name="penyelenggara" id="penyelenggara" class="form-control" value="{{$cert->penyelenggara}}">
+                <input type="text" name="penyelenggara" id="penyelenggara" class="form-control" value="{{$cert->penyelenggara}}" required>
             </div>
             <div class="mb-3">
                 <label for="tanggal_sertifikat">Tanggal Sertifikat</label>
-                <input type="text" name="tanggal_sertifikat" id="tanggal_sertifikat" class="form-control" value="{{$cert->tanggal_sertifikat}}">
+                <input type="text" name="tanggal_sertifikat" id="tanggal_sertifikat" class="form-control" value="{{$cert->tanggal_sertifikat}}" required>
             </div>
 
             <div class="mb-3">

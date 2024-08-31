@@ -11,19 +11,19 @@
             @csrf
             <div class="mb-3">
                 <label for="nama_perusahaan">Nama Perusahaan</label>
-                <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="form-control">
+                <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="jabatan">Jabatan</label>
-                <input type="text" name="jabatan" id="jabatan" class="form-control">
+                <input type="text" name="jabatan" id="jabatan" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="lama_kerja">Lama Kerja</label>
-                <input type="text" name="lama_kerja" id="lama_kerja" class="form-control" placeholder="Contoh: 1 Januari 2020 - 31 Desember 2023">
+                <input type="text" name="lama_kerja" id="lama_kerja" class="form-control" placeholder="Contoh: 1 Januari 2020 - 31 Desember 2023" required>
             </div>
             <div class="mb-3">
                 <label for="deskripsi">deskripsi</label>
-                <textarea type="text" name="deskripsi" id="deskripsi" class="form-control"></textarea>
+                <textarea type="text" name="deskripsi" id="deskripsi" class="form-control" required></textarea>
             </div>
 
 

@@ -33,11 +33,12 @@
                     <td>{{  $exp->deskripsi }}</td>
                     <td>
                         <a href="{{route('experience.edit', $exp->id)}}" class="btn btn-primary">Edit</a>
-                        <form class="d-inline" action="{{route('experience.destroy', $exp->id)}}" method="post">
+                        <a href="{{ route('experience.destroy', $exp->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                        {{-- <form class="d-inline" action="{{route('experience.destroy', $exp->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this profile?')">Delete</button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
                 @endforeach

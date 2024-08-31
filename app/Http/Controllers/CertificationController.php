@@ -15,6 +15,7 @@ class CertificationController extends Controller
     public function index()
     {
         $cert = Certification::orderBy('id', 'desc')->get();
+
         $title = 'Delete Data!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
@@ -71,6 +72,7 @@ class CertificationController extends Controller
             'penyelenggara' => $request->penyelenggara,
             'tanggal_sertifikat' => $request->tanggal_sertifikat,
         ]);
+        Alert::success('Success', 'Data Berhasil Diedit');
         return redirect()->route('certification.index')->with('success', 'Data Berhasil Diubah');
     }
 
@@ -81,6 +83,7 @@ class CertificationController extends Controller
     {
 
         Certification::findOrfail($id)->delete();
+        Alert::toast('Data telah dihapus', 'Toast Type');
         return redirect()->route('certification.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

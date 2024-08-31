@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfilController extends Controller
 {
@@ -14,6 +15,11 @@ class ProfilController extends Controller
     public function index()
     {
         $profiles = Profile::orderBy('id', 'desc')->get();
+
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('profil.index', compact('profiles'));
     }
 
@@ -65,6 +71,7 @@ class ProfilController extends Controller
             'instagram' => $request->instagram,
 
         ]);
+        Alert::success('Success', 'Data Berhasil Ditambahkan');
         return redirect()->route('profil.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
@@ -123,6 +130,8 @@ class ProfilController extends Controller
         $profile->instagram = $request->instagram;
         $profile->save();
 
+        Alert::success('Success', 'Data Berhasil Diedit');
+
         return redirect()->route('profil.index')->with('success', 'Update Profile Berhasil');
     }
 
@@ -132,6 +141,7 @@ class ProfilController extends Controller
     public function destroy(string $id)
     {
         Profile::where('id', $id)->delete();
+        Alert::toast('Data telah dihapus', 'Toast Type');
         return redirect()->to('profil')->with('message', 'Data berhasil dihapus');
     }
 }

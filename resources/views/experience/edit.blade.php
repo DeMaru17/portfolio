@@ -12,19 +12,19 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="nama_perusahaan">Nama Perusahaan</label>
-                <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="form-control" value="{{$experience->nama_perusahaan}}">
+                <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="form-control" value="{{$experience->nama_perusahaan}}" required>
             </div>
             <div class="mb-3">
                 <label for="jabatan">Jabatan</label>
-                <input type="text" name="jabatan" id="jabatan" class="form-control" value="{{$experience->jabatan}}">
+                <input type="text" name="jabatan" id="jabatan" class="form-control" value="{{$experience->jabatan}}" required>
             </div>
             <div class="mb-3">
                 <label for="lama_kerja">Lama Kerja</label>
-                <input type="text" name="lama_kerja" id="lama_kerja" class="form-control" value="{{$experience->lama_kerja}}">
+                <input type="text" name="lama_kerja" id="lama_kerja" class="form-control" value="{{$experience->lama_kerja}}" required>
             </div>
             <div class="mb-3">
                 <label for="deskripsi">deskripsi</label>
-                <textarea type="text" name="deskripsi" id="deskripsi" class="form-control" value="{{$experience->deskripsi}}"></textarea>
+                <textarea type="text" name="deskripsi" id="deskripsi" class="form-control" value="{{$experience->deskripsi}}" required></textarea>
             </div>
 
 
