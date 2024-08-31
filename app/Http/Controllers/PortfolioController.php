@@ -22,10 +22,16 @@ class PortfolioController extends Controller
     public function about()
     {
         $profile = Profile::first();
+        $skill = skill::all();
+        return view('portfolio.about', compact('profile', 'skill'));
+    }
+
+    public function resume()
+    {
+        $profile = Profile::first();
         $education = Education::all();
         $experience = Experience::all();
-        $skill = skill::all();
         $certification = Certification::all();
-        return view('portfolio.about', compact('profile', 'education', 'experience', 'skill', 'certification'));
+        return view('portfolio.resume', compact('profile', 'education',  'experience', 'certification'));
     }
 }

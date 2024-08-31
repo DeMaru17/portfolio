@@ -1,0 +1,67 @@
+@php
+      $namaLengkap = explode(' ', $profile->nama_lengkap);
+      $namaDepan = implode(' ', array_slice($namaLengkap, 0, 2));
+      $namaBelakang = implode(' ', array_slice($namaLengkap, 2));
+@endphp
+
+penjelasan kode dari explode nama lengkap
+
+$namaLengkap = explode(' ', $profile->nama_lengkap); Pertama, kode ini memecah string nama lengkap Anda menjadi array menggunakan fungsi explode(). Argument pertama adalah spasi (' '), yang artinya setiap spasi dianggap sebagai pemisah antar kata. Hasil dari operasi ini adalah array yang berisi kata-kata dari nama lengkap Anda.
+
+$namaDepan = implode(' ', array_slice($namaLengkap, 0, 2)); Kedua, kode ini menggabungkan kembali dua kata pertama dari nama lengkap Anda menggunakan fungsi implode(). Argument pertama adalah spasi (' '), yang artinya kata-kata akan dipisahkan oleh spasi. Argument kedua adalah array_slice($namaLengkap, 0, 2), yang artinya hanya kata-kata pertama dan kedua yang akan digabungkan.
+
+$namaBelakang = implode(' ', array_slice($namaLengkap, 2)); Ketiga, kode ini menggabungkan kembali kata-kata yang tersisa (ke-3 dan seterusnya) menggunakan fungsi implode(). Argument pertama adalah spasi (' '), yang artinya kata-kata akan dipisahkan oleh spasi. Argument kedua adalah array_slice($namaLengkap, 2), yang artinya kata-kata ke-3 dan seterusnya yang akan digabungkan.
+
+Setelah itu, kita menggunakan Blade untuk menampilkan $namaDepan dan $namaBelakang dalam dua baris menggunakan tag <br>. Hal ini akan menghasilkan tampilan nama lengkap Anda dalam dua baris, dengan dua kata pertama di atas dan kata-kata yang tersisa di bawahnya.
+
+
+
+Pada kode $namaDepan = implode(' ', array_slice($namaLengkap, 0, 2)); dan $namaBelakang = implode(' ', array_slice($namaLengkap, 2));, ada beberapa bagian yang perlu dijelaskan:
+
+array_slice($namaLengkap, 0, 2): Fungsi array_slice digunakan untuk mengambil sebagian dari array $namaLengkap. Argument-argument yang digunakan adalah:
+0: Ini adalah indeks awal dari array yang ingin diambil. Dalam hal ini, kita ingin mengambil dari awal array, jadi kita menggunakan 0.
+2: Ini adalah jumlah elemen yang ingin diambil. Dalam hal ini, kita ingin mengambil 2 elemen pertama dari array, yaitu kata-kata pertama dan kedua dari nama lengkap.
+Jadi, array_slice($namaLengkap, 0, 2) akan mengambil 2 elemen pertama dari array $namaLengkap, yaitu kata-kata pertama dan kedua dari nama lengkap.
+
+array_slice($namaLengkap, 2): Fungsi array_slice digunakan lagi untuk mengambil sebagian dari array $namaLengkap. Argument-argument yang digunakan adalah:
+2: Ini adalah indeks awal dari array yang ingin diambil. Dalam hal ini, kita ingin mengambil dari elemen ke-3 dari array, jadi kita menggunakan 2.
+Jadi, array_slice($namaLengkap, 2) akan mengambil semua elemen dari array $namaLengkap mulai dari elemen ke-3 hingga akhir array.
+
+Dengan demikian, $namaDepan akan berisi 2 kata pertama dari nama lengkap, dan $namaBelakang akan berisi kata-kata yang tersisa (ke-3 dan seterusnya).
+
+
+ @foreach ($skill as $sk)
+          @if ($loop->iteration % 3 == 1)
+            <div class="col-lg-6">
+          @endif
+
+              <div class="progress">
+                <span class="skill"><span>{{$sk->nama_skill}}</span> <i class="val">{{$sk->persentase}}</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{$sk->persentase}}" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+
+        @if ($loop->iteration % 3 == 0 || $loop->last)
+            </div>
+        @endif
+        @endforeach
+
+Simbol % dalam konteks ini adalah operator modulus, yang berarti "sisa" atau "remainder". Jadi, $loop->iteration % 3 berarti "sisa dari iterasi saat ini dibagi 3".
+
+Contohnya, jika iterasi saat ini adalah 4, maka $loop->iteration % 3 akan menghasilkan 1, karena 4 dibagi 3 adalah 1 dengan sisa 1.
+
+Jadi, kondisi @if ($loop->iteration % 3 == 1) berarti "jika sisa dari iterasi saat ini dibagi 3 adalah 1", maka kode di dalam kondisi tersebut akan dijalankan.
+
+Dalam konteks kode yang Anda berikan, kondisi ini digunakan untuk menentukan apakah harus membuka elemen div baru dengan kelas col-lg-6 setiap 3 iterasi. Jadi, jika iterasi saat ini adalah 1, 4, 7, dst., maka kode di dalam kondisi tersebut akan dijalankan dan membuka elemen div baru.
+
+
+1 dibagi 3 adalah 0 dengan sisa 1, jadi $loop->iteration % 3 akan menghasilkan 1.
+
+Namun, 1 iterasi sendiri tidak menghasilkan 1 dalam konteks ini. Yang dimaksud dengan "1 iterasi 3" adalah bahwa 1 adalah hasil dari operasi modulus, bukan bahwa 1 adalah hasil dari iterasi.
+
+Jadi, untuk memperjelas:
+
+1 dibagi 3 adalah 0 dengan sisa 1, jadi $loop->iteration % 3 menghasilkan 1.
+3 dibagi 3 adalah 1 dengan sisa 0, jadi $loop->iteration % 3 menghasilkan 0.
+4 dibagi 3 adalah 1 dengan sisa 1, jadi $loop->iteration % 3 menghasilkan 1.

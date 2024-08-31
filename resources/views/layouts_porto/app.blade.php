@@ -51,7 +51,7 @@
         <ul>
             <li><a href="{{route('portolio.index')}}" class="{{ Route::currentRouteName() == 'portolio.index' ? 'active' : '' }}">Home</a></li>
             <li><a href="{{route('portolio.about')}}" class="{{ Route::currentRouteName() == 'portolio.about' ? 'active' : '' }}">About</a></li>
-            {{-- <li><a href="resume.html" class="{{ Route::currentRouteName() == 'resume' ? 'active' : '' }}">Resume</a></li> --}}
+            <li><a href="{{route('portolio.resume')}}" class="{{ Route::currentRouteName() == 'portfolio.resume' ? 'active' : '' }}">Resume</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
@@ -69,24 +69,12 @@
   {{-- footer --}}
   <footer id="footer" class="footer dark-background">
     <div class="container">
-      <h3 class="sitename">Personal</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <h3 class="sitename">Portfolio</h3>
+      <p>If you have any questions or require further information, please do not hesitate to contact me. I am available and ready to assist you at your convenience.</p>
       <div class="social-links d-flex justify-content-center">
         <a href="{{$profile->facebook}}"><i class="bi bi-facebook"></i></a>
         <a href="{{$profile->instagram}}"><i class="bi bi-instagram"></i></a>
         <a href="{{$profile->linkedin}}"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
       </div>
     </div>
   </footer>

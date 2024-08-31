@@ -21,3 +21,4 @@ Route::resource('certification', \App\Http\Controllers\CertificationController::
 // Route::get('/portfolio', [\App\Http\Controllers\PortfolioController::class, 'footer'])->name('portolio.footer');
 Route::get('/portfolio', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('portolio.index');
 Route::get('/portfolio/about', [\App\Http\Controllers\PortfolioController::class, 'about'])->name('portolio.about');
+Route::get('/portfolio/resume', [\App\Http\Controllers\PortfolioController::class, 'resume'])->name('portolio.resume');

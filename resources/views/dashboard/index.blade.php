@@ -15,10 +15,10 @@
                 <img src="{{ asset('storage/image/'.$profile->gambar) }}" alt="Avatar" class="img-fluid rounded-circle mx-auto"  style="max-width: 130px;">
               </div>     
               <div class="col-md-10">
-                <h5>Nama: {{ $profile->nama_lengkap }}</h5>
-                <p>Email: {{ $profile->email }}</p>
-                <p>No. HP: {{ $profile->no_tel }}</p>
-                <p>Tentang Saya: {{ $profile->tentang_saya }}</p>
+                <h5><b>Nama:</b> {{ $profile->nama_lengkap }}</h5>
+                <p><b>Email:</b> {{ $profile->email }}</p>
+                <p><b>No. HP:</b> {{ $profile->no_tel }}</p>
+                <p><b>Tentang Saya:</b> {{ $profile->tentang_saya }}</p>
               </div>
             </div>
           </div>
