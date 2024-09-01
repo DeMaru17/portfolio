@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Personal Bootstrap Template</title>
+  <title>Portfolio</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -95,7 +95,7 @@
   <script src="{{asset('porto/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{asset('porto/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
   <script src="{{asset('porto/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
-  <script src="{{asset('porto/')}}assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="{{asset('porto/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
 
   <!-- Main JS File -->
   <script src="{{asset('porto/assets/js/main.js')}}"></script>
