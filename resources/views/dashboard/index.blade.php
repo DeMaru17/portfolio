@@ -12,8 +12,8 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-2 text-center">
-                <img src="{{ asset('storage/image/'.$profile->gambar) }}" alt="Avatar" class="img-fluid rounded-circle mx-auto"  style="max-width: 130px;">
-              </div>     
+                <img src="{{ asset('storage/image/'.$profile->gambar) }}" alt="Avatar" class="img-fluid  mx-auto"  style="max-width: 130px; border-radius:10px">
+              </div>
               <div class="col-md-10">
                 <h5><b>Nama:</b> {{ $profile->nama_lengkap }}</h5>
                 <p><b>Email:</b> {{ $profile->email }}</p>
