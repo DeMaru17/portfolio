@@ -29,11 +29,11 @@
             </div>
             <div class="mb-3">
                 <label for="alamat">Alamat</label>
-                <textarea name="alamat" id="alamat" class="form-control" cols="30" rows="10" value="{{$data->alamat}}"></textarea>
+                <textarea name="alamat" id="alamat" class="form-control" cols="30" rows="10" >{{$data->alamat}}</textarea>
             </div>
             <div class="mb-3">
                 <label for="descriptions">Tentang Saya</label>
-                <textarea name="tentang_saya" id="tentang_saya" class="form-control" cols="30" rows="10" value="{{$data->tentang_saya}}"></textarea>
+                <textarea name="tentang_saya" id="tentang_saya" class="form-control" cols="30" rows="10" >{{$data->tentang_saya}}</textarea>
             </div>
             <div class="mb-3">
                 <label for="facebook">Facebook</label>

@@ -44,8 +44,8 @@
             </div><!-- Edn Resume Item -->
 
             <h3 class="resume-title">Education</h3>
-            
-            
+
+
             @foreach ($education as $edu )
             <div class="resume-item">
               <h4>{{$edu->jurusan}}</h4>
@@ -53,8 +53,6 @@
               <p><em>{{$edu->nama_sekolah}}</em></p>
             </div><!-- Edn Resume Item -->
             @endforeach
-
-            
 
           </div>
 
